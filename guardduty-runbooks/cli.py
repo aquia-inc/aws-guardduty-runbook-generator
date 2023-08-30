@@ -31,11 +31,11 @@ def run(**arguments):
     findings = parse_guardduty_html(soup=soup)
 
     for finding in findings:
-        write_runbook(content=finding.markdown, filename=finding.finding_type, directory=arguments.get("outdir"), overwrite=arguments.get("overwrite"))
-
+        write_runbook(content=finding.markdown, filename=finding.finding_type,
+                      directory=arguments.get("outdir"), overwrite=arguments.get("overwrite"))
 
     # Test a single finding
-    # g = GuardDutyFinding(finding_type="hello_backdoor", 
+    # g = GuardDutyFinding(finding_type="hello_backdoor",
     #                      finding_url="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#backdoor-ec2-ccactivityb",
     #                      resource_type="resource",
     #                      data_source="the cloud",

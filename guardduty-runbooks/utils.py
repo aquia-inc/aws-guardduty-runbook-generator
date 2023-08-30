@@ -8,8 +8,10 @@ def chomp_keep_single_spaces(string):
     """
     result = str(string)
     result = string.replace("\n", " ")  # Convert line ends to spaces
-    result = re.sub(" [ ]*", " ", result)  # Truncate multiple spaces to single space
-    result = result.replace(" ", " ")  # Replace weird spaces with regular spaces
+    # Truncate multiple spaces to single space
+    result = re.sub(" [ ]*", " ", result)
+    # Replace weird spaces with regular spaces
+    result = result.replace(" ", " ")
     result = result.replace(u"\xa0", u" ")  # Remove non-breaking space
     result = re.sub("^[ ]*", "", result)  # Clean start
     return re.sub("[ ]*$", "", result)  # Clean end
