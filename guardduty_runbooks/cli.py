@@ -20,7 +20,7 @@ from .utils import write_runbook
 
 def main():
     arguments = {
-        k.lstrip('-'): v for k, v in docopt(__doc__, version='AWS Assessment Framework v0.01').items()
+        k.lstrip('-'): v for k, v in docopt(__doc__, version='AWS GuardDuty Runbook Generator v0.01').items()
     }
     run(**arguments)
 

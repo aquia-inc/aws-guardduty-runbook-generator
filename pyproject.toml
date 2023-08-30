@@ -20,4 +20,4 @@ dependencies = [
 ]
 
 [project.scripts]
-aws_assessment = "guardduty-runbooks.cli:main"
+guardduty-runbooks = "guardduty_runbooks.cli:main"
