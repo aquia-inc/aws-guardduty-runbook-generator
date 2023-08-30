@@ -6,7 +6,13 @@ This project is intended to be a kick-start to generate a base set of runbooks w
 
 ## Generating Runbooks
 
-This tool can be installed locally using pip. After cloning the directory, run in the folder:
+This tool can be installed from [PyPI](https://pypi.org/)
+
+```
+pip install guardduty-runbooks
+```
+
+It can also be installed locally. After cloning the directory, run in the folder:
 
 ```
 pip install .
@@ -30,6 +36,8 @@ Runbook filenames are written using the "finding type" specified by GuardDuty. B
 For example:
 `CryptoCurrency:EC2/BitcoinTool.B!DNS` becomes `cryptocurrency-ec2-bitcointool-b-dns`
 
+## License
+Runbook content generated from [docs.aws.amazon.com](docs.aws.amazon.com) are licensed under [CC-BY-SA-4.0](https://creativecommons.org/licenses/by-sa/4.0/) per [AWS Site Terms](https://aws.amazon.com/terms/).
 
 ## Related projects/links
 * [GuardDuty Documentation home](https://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html)
