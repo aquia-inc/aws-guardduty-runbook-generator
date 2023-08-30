@@ -25,7 +25,7 @@ This tool can be run multiple times to create runbooks for new finding types. Ru
 guardduty-runbooks --outdir ./my-runbook-directory --overwrite
 ```
 
-Runbooks are written using the "finding type" specified by GuardDuty. Because finding types includes non alphanumeric characters like `:, /, !,` and `.`, those characters are replaced with dashes `-` and all other characters are made lowercase. This is for ease of programatically locating runbooks for tools like [Panther](https://panther.com/) and [Mantano](https://www.matano.dev/).
+Runbook filenames are written using the "finding type" specified by GuardDuty. Because finding types includes non alphanumeric characters like `:, /, !,` and `.`, those characters are replaced with dashes `-` and all other characters are made lowercase. This is for ease of programatically locating runbooks for tools like [Panther](https://panther.com/) and [Mantano](https://www.matano.dev/).
 
 For example:
 `CryptoCurrency:EC2/BitcoinTool.B!DNS` becomes `cryptocurrency-ec2-bitcointool-b-dns`
