@@ -6,7 +6,13 @@ This project is intended to be a kick-start to generate a base set of runbooks w
 
 ## Generating Runbooks
 
-This tool can be installed locally using pip. After cloning the directory, run in the folder:
+This tool can be installed from [PyPI](https://pypi.org/)
+
+```
+pip install guardduty-runbooks
+```
+
+It can also be installed locally. After cloning the directory, run in the folder:
 
 ```
 pip install .
