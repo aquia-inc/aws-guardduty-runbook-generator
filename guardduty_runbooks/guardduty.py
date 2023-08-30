@@ -37,9 +37,11 @@ def parse_guardduty_html(soup):
 class GuardDutyFinding:
     """_summary_
     """
+
     def __init__(self, finding_type, finding_url, resource_type, data_source, severity):
         # removes non alphanumeric characters from finding_type
-        self.finding_type = ''.join(c if c.isalnum() else '-' for c in finding_type.lower())
+        self.finding_type = ''.join(
+            c if c.isalnum() else '-' for c in finding_type.lower())
         self.finding_url = finding_url
         self.resource_type = resource_type
         self.data_source = data_source
@@ -49,14 +51,13 @@ class GuardDutyFinding:
         self.get_finding_html()
         self.make_html_string()
 
-
     def get_finding_html(self):
         """Gets the html for a finding between headings
         """
         soup = get_guardduty_html(link=self.finding_url)
         self.finding_info = []
 
-        # Find the finding heading 
+        # Find the finding heading
         s = soup.find('h2', {"id": self.finding_heading})
         self.finding_info.append(s)
 
@@ -71,16 +72,15 @@ class GuardDutyFinding:
             if element.a and element.a['href'][0] == ".":
                 element.a['href'] = f"{BASE_GUARDDUTY_URL}{element.a['href'][1:]}"
 
-
     def make_html_string(self):
         """
         Cleans the lines into strings and
         attempts to format them
         """
-        combined = [ chomp_keep_single_spaces(str(line)) for line in self.finding_info]
+        combined = [chomp_keep_single_spaces(
+            str(line)) for line in self.finding_info]
 
         self.strings = '\n '.join(combined)
-
 
     @property
     def markdown(self):

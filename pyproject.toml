@@ -20,4 +20,8 @@ dependencies = [
 ]
 
 [project.scripts]
-aws_assessment = "guardduty-runbooks.cli:main"
+guardduty-runbooks = "guardduty_runbooks.cli:main"
+
+[project.urls]
+Homepage = "https://aquia.us"
+Repository = "https://github.com/aquia-inc/aws-guardduty-runbook-generator"
