@@ -33,7 +33,7 @@ def write_runbook(content, filename, directory, overwrite=None):
     if not overwrite and Path(f"{p}/{filename}").is_file():
         pass
     else:
-        with open(f"{p}/{filename}", 'w') as f:
+        with open(f"{p}/{filename}.md", 'w') as f:
             f.write(content)
             f.close()
-            print(f"Wrote {directory}/{filename}")
+            print(f"Wrote {directory}/{filename}.md")
